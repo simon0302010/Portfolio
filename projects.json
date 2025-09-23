@@ -14,5 +14,21 @@
     "hackatime": "MetaView",
     "repo": "https://github.com/simon0302010/MetaView",
     "demo": "https://pypi.org/project/MetaView/"
+  },
+  {
+    "image": "https://simon.hackclub.app/files/Solvy/solved_worksheet.png",
+    "title": "Solvy",
+    "desc": "An app to automatically solve worksheets using AI.",
+    "hackatime": "Solvy",
+    "repo": "https://github.com/simon0302010/Solvy",
+    "demo": "https://solvy.simon.hackclub.app/"
+  },
+  {
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1415bfae1033cbb297d02a05b8c69a8ef1ed9920_image.png",
+    "title": "Lyriks",
+    "desc": "A tool to automatically create Lyrics Videos of Songs",
+    "hackatime": "Lyriks",
+    "repo": "https://github.com/simon0302010/Lyriks",
+    "demo": "https://pypi.org/project/lyriks-video/"
   }
 ]
