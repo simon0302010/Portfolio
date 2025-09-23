@@ -5,16 +5,47 @@ body {
     background-attachment: fixed;
     font-family: 'Merriweather', serif;
     min-height: 100vh;
+    text-align: center;
 }
 
 h1 {
-    color: #2e15d1;
+    display: inline-block;
+    color: #fff;
     font-size: 60pt;
+    font-family: 'Montserrat', 'Merriweather', Arial, Helvetica, sans-serif;
+    margin: 30px auto 20px auto;
+    text-align: center;
+    letter-spacing: 5px;
+    padding: 18px 32px;
+    border-radius: 18px;
+    background: #2e15d1;
+    border: 3px solid #1c1aa2;
+}
+
+h2 {
+    color: #2e15d1;
+    font-size: 40pt;
     font-family: 'Montserrat', 'Merriweather', Arial, Helvetica, sans-serif;
     margin: 30px auto 20px auto;
     text-align: center;
     text-shadow: 0 0 10px #1c1aa2, 0 0 20px #360ba3;
     letter-spacing: 3px;
+}
+
+p {
+    color: white;
+}
+
+p img {
+    display: inline;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+}
+
+a {
+    color: red;
+    text-decoration: none;
 }
 
 table {
