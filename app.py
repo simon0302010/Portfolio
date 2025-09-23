@@ -15,10 +15,8 @@ os.makedirs("cache", exist_ok=True)
 
 def get_cached_hackatime():
     if os.path.exists(CACHE_FILE):
-        mtime = os.path.getmtime(CACHE_FILE)
-        if time.time() - mtime < CACHE_DURATION:
-            with open(CACHE_FILE, 'r') as f:
-                return json.load(f)
+        with open(CACHE_FILE, 'r') as f:
+            return json.load(f)
     # fetch data
     return update_hackatime_cache()
 
