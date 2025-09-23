@@ -1,12 +1,14 @@
 [
   {
-    "image": "https://placeholdit.com/300x300/dddddd/999999",
-    "title": "Project Name",
-    "desc": "Project Description"
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f947d69ac561b503224ce2bc9eac5ea7b75c3a39_image.png",
+    "title": "Koba",
+    "desc": "A terminal image renderer that can construct images using any set of unicode symbols.",
+    "hackatime": "koba"
   },
   {
-    "image": "https://placeholdit.com/300x300/dddddd/999999",
-    "title": "Project Name",
-    "desc": "Project Description"
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/260e55f7fdf33c2c746cc17d7d3ed5fa99db5fd0_image.png",
+    "title": "MetaView",
+    "desc": "Viewer and Editor for Image Metadata.",
+    "hackatime": "MetaView"
   }
 ]

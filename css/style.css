@@ -61,7 +61,13 @@ img {
 
 .project-desc {
     color: #bdbdbd;
-    font-size: 0.95.em;
+    font-size: 0.95em;
+    text-align: center;
+}
+
+.project-time {
+    color: #bdbdbd;
+    font-size: 0.95em;
     text-align: center;
 }
 
