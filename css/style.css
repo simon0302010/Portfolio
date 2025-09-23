@@ -29,6 +29,7 @@ img {
 
 .project {
     width: 300px;
+    min-height: 300px;
     max-height: 400px;
     background-color: black;
     border: 0px solid lightblue;
@@ -53,7 +54,7 @@ img {
     transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-image:hover {
+.project-image.expanded {
     max-height: 600px;
 }
 

@@ -3,7 +3,6 @@ fetch('projects.json')
   .then(projects => {
     const container = document.querySelector('.projects-container');
     container.innerHTML = '';
-    // TODO: add caching
     fetch('https://hackatime.hackclub.com/api/v1/users/simon/projects/details')
       .then(res => res.json())
       .then(hackatimeData => {
@@ -18,7 +17,6 @@ fetch('projects.json')
           `;
           container.appendChild(div);
 
-          // find the project
           const match = hackatimeData.projects.find(
             p => p.name.toLowerCase() === project.hackatime.toLowerCase()
           );
@@ -29,13 +27,29 @@ fetch('projects.json')
             div.querySelector('.project-time').innerHTML = 'No HackaTime data';
           }
         });
+
+        container.querySelectorAll('.project').forEach(card => {
+          card.addEventListener('mouseleave', function() {
+            this.querySelectorAll('.project-image.expanded').forEach(img => {
+              img.classList.remove('expanded');
+            });
+          });
+        });
       })
       .catch(() => {
-        // show error on fail
-        projects.forEach(() => {
-          const div = document.createElement('div');
-          div.className = 'project';
-          div.querySelector('.project-time').textContent = 'Error loading HackaTime';
-        });
+        container.innerHTML = '<div class="project">Error loading HackaTime</div>';
       });
   });
+
+document.querySelector('.projects-container').addEventListener('click', function(e) {
+  if (e.target.classList.contains('project-image')) {
+    this.querySelectorAll('.project-image.expanded').forEach(img => {
+      if (img !== e.target) img.classList.remove('expanded');
+    });
+    e.target.classList.toggle('expanded');
+  } else {
+    this.querySelectorAll('.project-image.expanded').forEach(img => {
+      img.classList.remove('expanded');
+    });
+  }
+});
