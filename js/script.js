@@ -3,7 +3,7 @@ fetch('projects.json')
   .then(projects => {
     const container = document.querySelector('.projects-container');
     container.innerHTML = '';
-    fetch('https://hackatime.hackclub.com/api/v1/users/simon/projects/details')
+    fetch('hackatime-cache')
       .then(res => res.json())
       .then(hackatimeData => {
         projects.forEach(project => {
