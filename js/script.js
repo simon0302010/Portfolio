@@ -14,7 +14,7 @@ fetch('projects.json')
             <img src="${project.image}" alt="${project.title}" class="project-image">
             <div class="project-title">${project.title}</div>
             <div class="project-desc">${project.desc}</div>
-            <div class="project-time"><br>Loading...</div>
+            <div class="project-time">Loading...</div>
           `;
           container.appendChild(div);
 
@@ -24,9 +24,9 @@ fetch('projects.json')
           );
           if (match) {
             const hours = Math.round(match.total_seconds / 3600);
-            div.querySelector('.project-time').innerHTML = `<br>Time spent: ${hours}h`;
+            div.querySelector('.project-time').innerHTML = `Time spent: ${hours}h`;
           } else {
-            div.querySelector('.project-time').innerHTML = '<br>No HackaTime data';
+            div.querySelector('.project-time').innerHTML = 'No HackaTime data';
           }
         });
       })
