@@ -1,5 +1,8 @@
 from flask import Flask, send_from_directory, jsonify
+import threading
+import schedule
 import requests
+import json
 import time
 import os
 
@@ -15,15 +18,22 @@ def get_cached_hackatime():
         mtime = os.path.getmtime(CACHE_FILE)
         if time.time() - mtime < CACHE_DURATION:
             with open(CACHE_FILE, 'r') as f:
-                import json
                 return json.load(f)
     # fetch data
+    return update_hackatime_cache()
+
+def update_hackatime_cache():
     resp = requests.get('https://hackatime.hackclub.com/api/v1/users/simon/projects/details?since=2023-01-01T00:00:00Z')
     data = resp.json()
     with open(CACHE_FILE, 'w') as f:
-        import json
         json.dump(data, f)
     return data
+
+def run_scheduler():
+    schedule.every(60).minutes.do(update_hackatime_cache)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
 @app.route('/hackatime-cache')
 def hackatime_cache():
@@ -38,4 +48,5 @@ def index():
     return send_from_directory('.', 'index.html')
 
 if __name__ == '__main__':
+    threading.Thread(target=run_scheduler, daemon=True).start()
     app.run(port=5111)
