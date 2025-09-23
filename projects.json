@@ -16,7 +16,7 @@
     "demo": "https://pypi.org/project/MetaView/"
   },
   {
-    "image": "https://simon.hackclub.app/files/Solvy/solved_worksheet.png",
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/046b958e744135c3b3381eb55b86f5287015e602_image.png",
     "title": "Solvy",
     "desc": "An app to automatically solve worksheets using AI.",
     "hackatime": "Solvy",
@@ -24,11 +24,19 @@
     "demo": "https://solvy.simon.hackclub.app/"
   },
   {
-    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1415bfae1033cbb297d02a05b8c69a8ef1ed9920_image.png",
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/9f7667f62ae862ab57f86f91c8d14ed9292c18af_image.png",
     "title": "Lyriks",
     "desc": "A tool to automatically create Lyrics Videos of Songs",
     "hackatime": "Lyriks",
     "repo": "https://github.com/simon0302010/Lyriks",
     "demo": "https://pypi.org/project/lyriks-video/"
+  },
+  {
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/433d67193f8c3a951aa617266e5a7cb7daa230ed_image.png",
+    "title": "autocorrect-linux",
+    "desc": "A system-wide word suggestion and prediction tool for Linux desktops.",
+    "hackatime": "autocorrect-linux",
+    "repo": "https://github.com/simon0302010/autocorrect-linux",
+    "demo": "https://pypi.org/project/autocorrect-linux/"
   }
 ]

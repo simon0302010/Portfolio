@@ -28,17 +28,17 @@ img {
 
 .project {
     width: 300px;
-    min-height: 300px;
+    min-height: 400px;
     max-height: 400px;
     background-color: black;
-    border: 0px solid lightblue;
+    border: 2px solid blue;
     margin: 20px 20px;
     transition: background-color 0.3s, border 0.3s, transform 0.3s, box-shadow 0.3s, max-height 0.5s;
 }
 
 .project:hover {
     background-color: rgb(10, 10, 10);
-    border: 0px solid lightblue;
+    border: 2px solid blue;
     transform: scale(1.05);
     box-shadow: 0 0 10px #1c1aa2, 0 0 20px #360ba3;
     max-height: 800px;
@@ -47,10 +47,11 @@ img {
 .project-image {
     width: 95%;
     max-height: 180px;
+    border: 2px solid rgb(0, 0, 143);
     object-fit: cover;
     margin-bottom: 10px;
     margin-top: 8px;
-    transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: max-height 0.7s;
 }
 
 .project-image.expanded {
@@ -108,6 +109,6 @@ img {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    max-width: 980px;
+    max-width: 1200px;
     margin: 0 auto;
 }

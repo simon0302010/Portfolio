@@ -18,7 +18,7 @@ def get_cached_hackatime():
                 import json
                 return json.load(f)
     # fetch data
-    resp = requests.get('https://hackatime.hackclub.com/api/v1/users/simon/projects/details')
+    resp = requests.get('https://hackatime.hackclub.com/api/v1/users/simon/projects/details?since=2023-01-01T00:00:00Z')
     data = resp.json()
     with open(CACHE_FILE, 'w') as f:
         import json

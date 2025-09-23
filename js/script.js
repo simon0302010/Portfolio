@@ -28,7 +28,7 @@ fetch('projects.json')
             const hours = Math.round(match.total_seconds / 3600);
             div.querySelector('.project-time').innerHTML = `Time spent: ${hours}h`;
           } else {
-            div.querySelector('.project-time').innerHTML = 'No HackaTime data';
+            div.querySelector('.project-time').innerHTML = 'No Hackatime data';
           }
         });
 
