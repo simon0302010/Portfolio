@@ -13,6 +13,10 @@ fetch('projects.json')
             <img src="${project.image}" alt="${project.title}" class="project-image">
             <div class="project-title">${project.title}</div>
             <div class="project-desc">${project.desc}</div>
+            <div class="project-links">
+              ${project.repo ? `<a href="${project.repo}" target="_blank" class="project-link repo-link">🔗 Repository</a>` : ''}
+              ${project.demo ? `<a href="${project.demo}" target="_blank" class="project-link demo-link">🌐 Demo</a>` : ''}
+            </div>
             <div class="project-time">Loading...</div>
           `;
           container.appendChild(div);

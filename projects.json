@@ -3,12 +3,16 @@
     "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f947d69ac561b503224ce2bc9eac5ea7b75c3a39_image.png",
     "title": "Koba",
     "desc": "A terminal image renderer that can construct images using any set of unicode symbols.",
-    "hackatime": "koba"
+    "hackatime": "koba",
+    "repo": "https://github.com/simon0302010/koba",
+    "demo": "https://www.youtube.com/watch?v=1B3pHQXGauI"
   },
   {
     "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/260e55f7fdf33c2c746cc17d7d3ed5fa99db5fd0_image.png",
     "title": "MetaView",
     "desc": "Viewer and Editor for Image Metadata.",
-    "hackatime": "MetaView"
+    "hackatime": "MetaView",
+    "repo": "https://github.com/simon0302010/MetaView",
+    "demo": "https://pypi.org/project/MetaView/"
   }
 ]
