@@ -38,5 +38,21 @@
     "hackatime": "autocorrect-linux",
     "repo": "https://github.com/simon0302010/autocorrect-linux",
     "demo": "https://pypi.org/project/autocorrect-linux/"
+  },
+  {
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e4e0837952c62f4c9c51934e55e6a911149279e3_image.png",
+    "title": "Cutted",
+    "desc": "AI-powered audio editor controllable via natural language.",
+    "hackatime": "Cutted",
+    "repo": "https://github.com/simon0302010/Cutted",
+    "demo": "https://pypi.org/project/cutted/"
+  },
+  {
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0fd30b6d1567ef644e0e7410c041c63ac32b3f9f_image.png",
+    "title": "Metaclean",
+    "desc": "App to clean metadata from multiple images.",
+    "hackatime": "metaclean",
+    "repo": "https://github.com/simon0302010/metaclean",
+    "demo": "https://pypi.org/project/metaclean-gui/"
   }
 ]
