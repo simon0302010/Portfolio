@@ -78,6 +78,7 @@ def comments():
 def today():
     return "10m"
 
+threading.Thread(target=run_scheduler, daemon=True).start()
+
 if __name__ == '__main__':
-    threading.Thread(target=run_scheduler, daemon=True).start()
     app.run(port=5111, host="0.0.0.0")
