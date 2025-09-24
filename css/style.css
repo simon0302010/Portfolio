@@ -133,9 +133,10 @@ img {
     text-align: left;
 }
 
-.github-repo {
+.links {
     display: flex;
     align-items: center;
+    gap: 5px;
     height: 32px;
 }
 
