@@ -67,6 +67,8 @@ def comments():
             "text": bleach.clean(data.get("text", "")),
             "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
         }
+        if len(comment['author']) > 50 or len(comment['text']) > 300:
+            return jsonify({"error": "Too long"}), 413
         comments = []
         if os.path.exists(COMMENTS_FILE):
             with open(COMMENTS_FILE, 'r') as f:

@@ -96,8 +96,9 @@ document.getElementById('comment-form').addEventListener('submit', function(e) {
     body: JSON.stringify({ author, text })
   }).then(response => {
     if (response.status === 429) {
-      document.getElementById('comments-container').innerHTML =
-        '<div class="comment error">Too many requests. Please try again later.</div>';
+      alert("Too many requests. Please try again later.")
+    } else if (response.status === 413) {
+      alert("Text or Author name too long.")
     } else {
       document.getElementById('comment-form').reset();
       loadComments();
