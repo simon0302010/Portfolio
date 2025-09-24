@@ -126,15 +126,14 @@ img {
     text-align: left;
 }
 
-.copyright link2 {
-    color: blue;
-}
-
 .github-repo {
-    text-align: right;
+    display: flex;
+    align-items: center;
+    height: 32px;
 }
 
 .footer {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 }
