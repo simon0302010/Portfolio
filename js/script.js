@@ -65,7 +65,7 @@ function loadComments() {
     .then(comments => {
       const container = document.getElementById('comments-container');
       container.innerHTML = comments.map(c =>
-        `<div class="comment"><strong>${c.author}</strong> (${c.timestamp}):<br>${c.text.replace(/\n/g, '<br>')}</div>`
+        `<div class="comment"><strong>${c.author}</strong> (${c.timestamp} UTC):<br>${c.text.replace(/\n/g, '<br>')}</div>`
       ).join('');
     });
 }
