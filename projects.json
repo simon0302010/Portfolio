@@ -54,5 +54,13 @@
     "hackatime": "metaclean",
     "repo": "https://github.com/simon0302010/metaclean",
     "demo": "https://pypi.org/project/metaclean-gui/"
+  },
+  {
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a3c9d09388b7b874c09297d8cb6cf4e86480660d_image.png",
+    "title": "Portfolio",
+    "desc": "My Portfolio",
+    "hackatime": "Portfolio",
+    "repo": "https://github.com/simon0302010/Portfolio",
+    "demo": "https://simon.hackclub.app/"
   }
 ]
