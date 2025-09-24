@@ -10,16 +10,18 @@ body {
 
 h1 {
     display: inline-block;
-    color: #fff;
-    font-size: 60pt;
+    color: #2200ff;
+    font-size: 48pt;
     font-family: 'Montserrat', 'Merriweather', Arial, Helvetica, sans-serif;
     margin: 30px auto 20px auto;
     text-align: center;
-    letter-spacing: 5px;
-    padding: 18px 32px;
-    border-radius: 18px;
-    background: #2e15d1;
-    border: 3px solid #1c1aa2;
+    letter-spacing: 4px;
+    padding: 16px 28px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #1c1aa2 60%, #360ba3 100%);
+    border: 2px solid #2e15d1;
+    box-shadow: 0 0 10px #1c1aa2, 0 0 20px #360ba3;
+    text-shadow: 0 0 10px #1c1aa2, 0 0 20px #360ba3;
 }
 
 h2 {
@@ -33,7 +35,9 @@ h2 {
 }
 
 p {
-    color: white;
+    color: rgb(177, 167, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15pt;
 }
 
 p img {
@@ -142,4 +146,61 @@ img {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.comment {
+    background: #222;
+    color: #eee;
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 0 0 6px #1c1aa2;
+}
+
+.comment-form {
+    width: 300px;
+    min-height: 180px;
+    background-color: black;
+    border: 2px solid blue;
+    margin: 20px 20px;
+    padding: 18px 16px;
+    box-shadow: 0 0 10px #1c1aa2, 0 0 20px #360ba3;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment-form input,
+.comment-form textarea {
+    background: #222;
+    color: #eee;
+    border: 1px solid #1c1aa2;
+    padding: 8px;
+    font-size: 1em;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.comment-form textarea {
+    min-height: 60px;
+    max-height: 180px;
+}
+
+.comment-form button {
+    background: linear-gradient(135deg, #1c1aa2 60%, #360ba3 100%);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.3s;
+}
+
+.comment-form button:hover {
+    background: linear-gradient(135deg, #360ba3 60%, #1c1aa2 100%);
 }
