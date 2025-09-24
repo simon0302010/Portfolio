@@ -14,7 +14,7 @@ This repository contains my portfolio website. It is hosted at https://simon.hac
 
 2. Install requirements
     ```bash
-    python3 -m pip install requirements.txt
+    python3 -m pip install -r requirements.txt
     ```
 
 3. Start the server
@@ -26,4 +26,4 @@ The webserver should now be running at http://127.0.0.1:5111
 
 ## License
 
-All code in this repository is licensed under the GNU General Public License Version 3.
+This project is licensed under the terms of the [GNU General Public License Version 3](./LICENSE).
