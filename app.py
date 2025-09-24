@@ -72,6 +72,10 @@ def comments():
         else:
             comments = []
         return jsonify(comments)
+    
+@app.route('/today')
+def today():
+    return "10m"
 
 if __name__ == '__main__':
     threading.Thread(target=run_scheduler, daemon=True).start()
