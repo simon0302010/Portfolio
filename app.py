@@ -5,6 +5,7 @@ import requests
 import json
 import time
 import os
+import bleach
 
 app = Flask(__name__, static_folder='.')
 
@@ -52,8 +53,8 @@ def comments():
         # new comment
         data = request.get_json()
         comment = {
-            "author": data.get("author", "Anonymous"),
-            "text": data.get("text", ""),
+            "author": bleach.clean(data.get("author", "Anonymous")),
+            "text": bleach.clean(data.get("text", "")),
             "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
         }
         comments = []

@@ -58,23 +58,13 @@ document.querySelector('.projects-container').addEventListener('click', function
   }
 });
 
-function escapeHTML(str) {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-
-// load comments
 function loadComments() {
   fetch('/comments')
     .then(res => res.json())
     .then(comments => {
       const container = document.getElementById('comments-container');
       container.innerHTML = comments.map(c =>
-        `<div class="comment"><strong>${escapeHTML(c.author)}</strong> (${escapeHTML(c.timestamp)} UTC):<br>${escapeHTML(c.text).replace(/\n/g, '<br>')}</div>`
+        `<div class="comment"><strong>${c.author}</strong> (${c.timestamp} UTC):<br>${c.text.replace(/\n/g, '<br>')}</div>`
       ).join('');
     });
 }
