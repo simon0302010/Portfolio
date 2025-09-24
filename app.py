@@ -6,6 +6,7 @@ import json
 import time
 import os
 import bleach
+from datetime import datetime, timezone
 
 app = Flask(__name__, static_folder='.')
 
@@ -55,7 +56,7 @@ def comments():
         comment = {
             "author": bleach.clean(data.get("author", "Anonymous")),
             "text": bleach.clean(data.get("text", "")),
-            "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
+            "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
         }
         comments = []
         if os.path.exists(COMMENTS_FILE):
