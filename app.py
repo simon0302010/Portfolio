@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory, jsonify
+from flask import Flask, send_from_directory, jsonify, request
 import threading
 import schedule
 import requests
@@ -8,10 +8,11 @@ import os
 
 app = Flask(__name__, static_folder='.')
 
-CACHE_FILE = 'cache/hackatime.json'
+CACHE_FILE = 'data/hackatime.json'
+COMMENTS_FILE = 'data/comments.json'
 CACHE_DURATION = 60  # 1 hour
 
-os.makedirs("cache", exist_ok=True)
+os.makedirs("data", exist_ok=True)
 
 def get_cached_hackatime():
     if os.path.exists(CACHE_FILE):
@@ -44,6 +45,33 @@ def static_files(path):
 @app.route('/')
 def index():
     return send_from_directory('.', 'index.html')
+
+@app.route('/comments', methods=['GET', 'POST'])
+def comments():
+    if request.method == 'POST':
+        # new comment
+        data = request.get_json()
+        comment = {
+            "author": data.get("author", "Anonymous"),
+            "text": data.get("text", ""),
+            "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
+        }
+        comments = []
+        if os.path.exists(COMMENTS_FILE):
+            with open(COMMENTS_FILE, 'r') as f:
+                comments = json.load(f)
+        comments.append(comment)
+        with open(COMMENTS_FILE, 'w') as f:
+            json.dump(comments, f)
+        return jsonify({"success": True}), 201
+    else:
+        # fetch comments
+        if os.path.exists(COMMENTS_FILE):
+            with open(COMMENTS_FILE, 'r') as f:
+                comments = json.load(f)
+        else:
+            comments = []
+        return jsonify(comments)
 
 if __name__ == '__main__':
     threading.Thread(target=run_scheduler, daemon=True).start()
