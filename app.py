@@ -9,7 +9,7 @@ import os
 app = Flask(__name__, static_folder='.')
 
 CACHE_FILE = 'cache/hackatime.json'
-CACHE_DURATION = 10 * 60  # 10 minutes
+CACHE_DURATION = 60  # 1 hour
 
 os.makedirs("cache", exist_ok=True)
 
@@ -28,7 +28,7 @@ def update_hackatime_cache():
     return data
 
 def run_scheduler():
-    schedule.every(60).minutes.do(update_hackatime_cache)
+    schedule.every(CACHE_DURATION).minutes.do(update_hackatime_cache)
     while True:
         schedule.run_pending()
         time.sleep(1)
