@@ -79,4 +79,4 @@ def today():
 
 if __name__ == '__main__':
     threading.Thread(target=run_scheduler, daemon=True).start()
-    app.run(port=5111)
+    app.run(port=5111, host="0.0.0.0")
