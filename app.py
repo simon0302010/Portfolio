@@ -72,6 +72,7 @@ def comments():
                 comments = json.load(f)
         else:
             comments = []
+        comments.reverse()
         return jsonify(comments)
     
 @app.route('/today')

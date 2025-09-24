@@ -74,7 +74,7 @@ img {
 }
 
 .comment-form {
-    width: 500px;
+    width: 350px;
     min-height: 180px;
     background-color: black;
     border: 2px solid blue;
@@ -119,6 +119,13 @@ img {
 
 .comment-form button:hover {
     background: linear-gradient(135deg, #360ba3 60%, #1c1aa2 100%);
+}
+
+.comment-divider {
+    border: none;
+    border-top: 2px solid #1c1aa2;
+    margin: 32px auto 32px auto;
+    width: 500px
 }
 
 .copyright {
