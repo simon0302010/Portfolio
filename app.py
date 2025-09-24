@@ -1,4 +1,6 @@
 from flask import Flask, send_from_directory, jsonify, request
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 import threading
 import schedule
 import requests
@@ -9,6 +11,12 @@ import bleach
 from datetime import datetime, timezone
 
 app = Flask(__name__, static_folder='.')
+
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["100 per hour"]
+)
 
 CACHE_FILE = 'data/hackatime.json'
 COMMENTS_FILE = 'data/comments.json'
@@ -49,6 +57,7 @@ def index():
     return send_from_directory('.', 'index.html')
 
 @app.route('/comments', methods=['GET', 'POST'])
+@limiter.limit("5 per minute")
 def comments():
     if request.method == 'POST':
         # new comment

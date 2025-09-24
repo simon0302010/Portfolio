@@ -60,14 +60,29 @@ document.querySelector('.projects-container').addEventListener('click', function
 
 function loadComments() {
   fetch('/comments')
-    .then(res => res.json())
+    .then(res => {
+      if (res.status === 429) {
+        document.getElementById('comments-container').innerHTML =
+          '<div class="comment error">Too many requests. Please try again later.</div>';
+        return [];
+      }
+      if (!res.ok) {
+        document.getElementById('comments-container').innerHTML =
+          '<div class="comment error">Error loading comments.</div>';
+        return [];
+      }
+      return res.json();
+    })
     .then(comments => {
-      const container = document.getElementById('comments-container');
-      container.innerHTML = comments.map(c =>
-        `<div class="comment"><strong>${c.author}</strong> (${c.timestamp} UTC):<br>${c.text.replace(/\n/g, '<br>')}</div>`
-      ).join('');
+      if (comments.length) {
+        const container = document.getElementById('comments-container');
+        container.innerHTML = comments.map(c =>
+          `<div class="comment"><strong>${c.author}</strong> (${c.timestamp} UTC):<br>${c.text.replace(/\n/g, '<br>')}</div>`
+        ).join('');
+      }
     });
 }
+
 loadComments()
 
 // comment submit logic
@@ -79,8 +94,13 @@ document.getElementById('comment-form').addEventListener('submit', function(e) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ author, text })
-  }).then(() => {
-    document.getElementById('comment-form').reset();
-    loadComments();
+  }).then(response => {
+    if (response.status === 429) {
+      document.getElementById('comments-container').innerHTML =
+        '<div class="comment error">Too many requests. Please try again later.</div>';
+    } else {
+      document.getElementById('comment-form').reset();
+      loadComments();
+    }
   });
 });
