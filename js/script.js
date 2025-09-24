@@ -57,3 +57,31 @@ document.querySelector('.projects-container').addEventListener('click', function
     });
   }
 });
+
+// load comments
+function loadComments() {
+  fetch('/comments')
+    .then(res => res.json())
+    .then(comments => {
+      const container = document.getElementById('comments-container');
+      container.innerHTML = comments.map(c =>
+        `<div class="comment"><strong>${c.author}</strong> (${c.timestamp}):<br>${c.text.replace(/\n/g, '<br>')}</div>`
+      ).join('');
+    });
+}
+loadComments()
+
+// comment submit logic
+document.getElementById('comment-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const author = document.getElementById('comment-author').value;
+  const text = document.getElementById('comment-text').value;
+  fetch('/comments', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ author, text })
+  }).then(() => {
+    document.getElementById('comment-form').reset();
+    loadComments();
+  });
+});
