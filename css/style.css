@@ -128,19 +128,16 @@ img {
     width: 500px
 }
 
-.copyright {
-    color: rgb(127, 127, 127);
-    text-align: left;
-}
-
 .links {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
     height: 32px;
 }
 
 .footer {
+    color: rgb(127, 127, 127);
+    text-align: left;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
