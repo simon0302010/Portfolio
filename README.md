@@ -31,6 +31,22 @@ This repository contains my portfolio website. It is hosted at https://simon.hac
 
 The webserver should now be running at http://127.0.0.1:5111
 
+## Environment Variable
+
+To see the time spent coding today you need to set the `HACKATIME_API_KEY` environment variable with your Hackatime API key before running the application.
+
+**On Linux/macOS:**
+```bash
+export HACKATIME_API_KEY=your_api_key_here
+```
+
+**On Windows (Command Prompt):**
+```cmd
+set HACKATIME_API_KEY=your_api_key_here
+```
+
+Replace `your_api_key_here` with your actual Hackatime API key.
+
 ## License
 
 This project is licensed under the terms of the [GNU General Public License Version 3](./LICENSE).

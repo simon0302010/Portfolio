@@ -18,6 +18,8 @@ limiter = Limiter(
     default_limits=["100 per hour"]
 )
 
+HACKATIME_API_KEY = os.environ.get("HACKATIME_API_KEY")
+
 CACHE_FILE = 'data/hackatime.json'
 COMMENTS_FILE = 'data/comments.json'
 CACHE_DURATION = 60  # 1 hour
@@ -45,6 +47,7 @@ def run_scheduler():
         time.sleep(1)
 
 @app.route('/hackatime-cache')
+@limiter.limit("30 per minute")
 def hackatime_cache():
     return jsonify(get_cached_hackatime())
 
@@ -88,8 +91,21 @@ def comments():
         return jsonify(comments)
     
 @app.route('/today')
+@limiter.limit("5 per minute")
 def today():
-    return "10m"
+    headers = {
+        "Authorization": f"Bearer {HACKATIME_API_KEY}"
+    }
+    url = "https://hackatime.hackclub.com/api/hackatime/v1/users/U08HC7N4JJW/statusbar/today"
+    
+    response = requests.get(url=url, headers=headers)
+    
+    text = response.json()['data']['grand_total']['text']
+    
+    if "coding" in text:
+        text = "0m"
+    
+    return jsonify(text), 200
 
 threading.Thread(target=run_scheduler, daemon=True).start()
 

@@ -58,6 +58,25 @@ document.querySelector('.projects-container').addEventListener('click', function
   }
 });
 
+fetch('today')
+  .then(response => {
+    if (response.status === 200) {
+      return response.json().then(res => {
+        document.querySelectorAll('.today').forEach(div => {
+          div.innerHTML = `Time spent coding today: ${res.today ?? res}`;
+        });
+      });
+    } else if (response.status === 429) {
+      document.querySelectorAll('.today').forEach(div => {
+        div.innerHTML = `Time spent coding today: Rate limited.`;
+      });
+    } else {
+      document.querySelectorAll('.today').forEach(div => {
+        div.innerHTML = `Time spent coding today: An error occurred.`;
+      });
+    }
+  });
+
 function loadComments() {
   fetch('/comments')
     .then(res => {

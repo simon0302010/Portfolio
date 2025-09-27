@@ -8,9 +8,16 @@ body {
     text-align: center;
 }
 
+.today {
+    text-align: center;
+    margin-right: 0px;
+    color: rgb(88, 86, 199);
+    font-size: 14pt;
+}
+
 h1 {
     display: inline-block;
-    color: #5036ff;
+    color: #6b73bb;
     font-size: 48pt;
     font-family: 'Montserrat', 'Merriweather', Arial, Helvetica, sans-serif;
     margin: 30px auto 20px auto;
