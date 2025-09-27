@@ -33,7 +33,7 @@ The webserver should now be running at http://127.0.0.1:5111
 
 ## Environment Variable
 
-To see the time spent coding today you need to set the `HACKATIME_API_KEY` environment variable with your Hackatime API key before running the application.
+To see the time spent coding today you need to set the `HACKATIME_API_KEY` environment variable with your Hackatime API key before running the application. Also remember to change the user ID in all scripts to your own user ID.
 
 **On Linux/macOS:**
 ```bash
