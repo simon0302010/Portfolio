@@ -4,6 +4,13 @@
 
 This repository contains my portfolio website. It is hosted at https://simon.hackclub.app.
 
+## Features
+
+- Showcases projects with images, descriptions, and links
+- Displays time spent on each project using the Hackatime API
+- Visitors can leave comments on the website
+- Cool design
+
 ## Installation
 
 1. Clone the Repository
