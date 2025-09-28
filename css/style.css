@@ -43,10 +43,16 @@ h2 {
     letter-spacing: 3px;
 }
 
-p {
+p#about-me {
     color: rgb(177, 167, 255);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 15pt;
+}
+
+p {
+    color: rgb(108, 94, 199);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14pt;
 }
 
 p img {

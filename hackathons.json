@@ -5,5 +5,12 @@
         "desc": "A 130-person hackathon on an island organized by Hack Club. I spent 60 hours building projects to qualify and another 64 hours to get a full travel stipend.",
         "link": "https://shipwrecked.hackclub.com",
         "time": "August 8 - 11, 2025"
+    },
+    {
+        "image": "https://siege.hackclub.com/assets/logo-55998110.webp",
+        "title": "Siege",
+        "desc": "A Hackathon organizied by Hack Club where you get a Framework Laptop if you ship a project that you spent atleast 10 hours on every week for 10 weeks (+ 4 prep weeks).",
+        "link": "https://siege.hackclub.com",
+        "time": "September 1 - December 7, 2025"
     }
 ]
