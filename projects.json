@@ -62,5 +62,37 @@
     "hackatime": "Portfolio",
     "repo": "https://github.com/simon0302010/Portfolio",
     "demo": "https://simon.hackclub.app/"
+  },
+  {
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e015c34e8683755ee4a4bbe804ac3d51fb8babd2_image.png",
+    "title": "Celar",
+    "desc": "A CLI social media app where likes are coins.",
+    "hackatime": "celar",
+    "repo": "https://github.com/simon0302010/celar",
+    "demo": "https://pypi.org/project/celar/"
+  },
+  {
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/51a4dcc2b07c2a30c0f0ab547eb0bf0ca6863968_image.png",
+    "title": "Controllable",
+    "desc": "A program to control your computer through its camera.",
+    "hackatime": "Controllable",
+    "repo": "https://github.com/simon0302010/Controllable",
+    "demo": "https://pypi.org/project/controllable-py/"
+  },
+  {
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/b3f2c76865a1501021d129f4e10970672ee49a3b_image.png",
+    "title": "Signal Locate",
+    "desc": "A tool to create a heatmap of wifi signal strength.",
+    "hackatime": "signal-locate",
+    "repo": "https://github.com/simon0302010/signal-locate",
+    "demo": "https://crates.io/crates/signal-locate"
+  },
+  {
+    "image": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c569769ac75b160dd64b2ac8b014a51715c0b3e7_image.png",
+    "title": "Falling",
+    "desc": "Simple 2D game about falling.",
+    "hackatime": "falling",
+    "repo": "https://github.com/simon0302010/falling",
+    "demo": "https://crates.io/crates/falling"
   }
 ]
